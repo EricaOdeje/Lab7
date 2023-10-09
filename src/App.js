@@ -5,6 +5,8 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Read from './components/read';
+import Create from './components/create';
 
  {/*  To allow client side routing, I installed the package 
   npm install react-router-dom */}
@@ -27,8 +29,8 @@ function App() {
           {/*  I added routing links so you can navigate easily*/}
         <Routes>
           <Route path='/' element={<Content></Content>}></Route>
-          <Route path='read' element={<Header></Header>}></Route>
-          <Route path='/create' element={<Footer></Footer>}></Route>
+          <Route path='read' element={<Read></Read>}></Route>
+          <Route path='/create' element={<Create></Create>}></Route>
         </Routes>
       </div>
     </BrowserRouter>
