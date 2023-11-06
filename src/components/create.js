@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 
 function Create() {
 {/*The React useState Hook allows us to track state in a function component.*/}
@@ -12,6 +13,16 @@ function Create() {
         console.log("Title: "+title+
         "Cover: "+cover+
         "Author:"+author);
+
+        const book = {
+            title:title,
+            cover:cover,
+            author: author
+        };
+
+        axios.post('http://localhost:4000/api/books' ,book)
+        .then()
+        .catch();
 
     };
     return (
