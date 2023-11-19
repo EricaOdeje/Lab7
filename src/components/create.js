@@ -10,6 +10,7 @@ function Create() {
     {/*This function will receive the form data if form validation is successful.*/}
     const handleSumbit = (e) =>{
         e.preventDefault();
+
         console.log("Title: "+title+
         "Cover: "+cover+
         "Author:"+author);
@@ -17,20 +18,21 @@ function Create() {
         const book = {
             title:title,
             cover:cover,
-            author: author
+            author:author
         };
 
         axios.post('http://localhost:4000/api/books' ,book)
         .then()
         .catch();
 
-    };
+    }
+
     return (
         <div>
             <h2>This is my Create component</h2>
 
     
-            <form onSumbit ={handleSumbit}>
+            <form onSubmit={handleSumbit}>
                 
                 {/*I modified the Create component so that it now includes a form that will upload data to a server*/}
                 <div className="form-group">
@@ -60,7 +62,7 @@ function Create() {
                     />
                 </div>
                 <div>
-                    <input type= "submit" value="Create book"></input>
+                    <input type="submit" value="Create book"></input>
                 </div>
             </form>
         </div>

@@ -9,8 +9,8 @@ function BookItem(props) {
             {/*I used props.mybook.title to pass data from one component to another.*/}
       <Card.Body>{props.mybook.title}</Card.Body>
     </Card>
-            <img src={props.mybook.thumbnailUrl}></img>
-            <p>{props.mybook.authors[0]}</p>
+            <img src={props.mybook.cover}></img>
+            <p>{props.mybook.author}</p>
         </div>
     );
 

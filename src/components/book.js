@@ -8,7 +8,7 @@ function Book(props){
     return props.myBook.map( 
             
         (book) => {
-            return <BookItem mybook={book} key={book.isbn}></BookItem>
+            return <BookItem mybook={book} key={book.id}></BookItem>
         }
     );
     }
