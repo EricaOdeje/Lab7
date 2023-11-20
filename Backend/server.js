@@ -39,6 +39,7 @@ const bookSchema = new mongoose.Schema({
   author:String
 })
 
+{/* I use the Schema to construct a database model */}
 const bookModel = mongoose.model('books' ,bookSchema);
 
 {/* I added a post method on the Express Server that will console log both the title, 
@@ -46,7 +47,7 @@ author and cover of the object passed up by the React App */}
 app.post('/api/books', (req, res) => {
     console.log(req.body);
 
-    //Put comment here
+    {/* I wrote a method that will write data to your database. I used the create() function to create new documents. */}
     bookModel.create({
       title:req.body.title,
       cover:req.body.cover,
@@ -64,14 +65,15 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-//Put comment here
+{/* I wrote a method that reads all data from the database and gets it to display on the react
+app. */}
 app.get('/api/books', async(req, res) => {
   let books = await bookModel.find({});
   console.log(books);
   res.json(books);
 })
 
-//Put comment here
+{/* I wrote a method that reads a book by id from my database in my server */}
 app.get('/api/books/:id' ,async(req,res)=>{
   console.log(req.params.id);
   let book = await bookModel.findById({_id:req.params.id})
